@@ -5,7 +5,7 @@ class Render {
         let path = req.path;
         console.log(path);
         let filePath = path.substring(1, path.length);
-        filePath.replace(".html", '');
+        filePath.replace(".html", "");
         console.log(filePath);
         res.render(filePath);
     }

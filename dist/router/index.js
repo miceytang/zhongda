@@ -17,7 +17,7 @@ const Router = express_1.default.Router();
 Router.use(index_1.baseRenderUrl, render_1.default);
 /* --------- 404处理 --------- */
 Router.use((req, res, next) => {
-    res.redirect('http://yuandaqh.com.cn/views/index.html');
+    res.redirect("http://yuandaqh.com.cn/zhongyi/index.html");
     // return next(
     //   generateErr(NOT_FOUND, `访问 CGI 不存在！PATH 为 ${req.originalUrl}。`)
     // );
