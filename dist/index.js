@@ -1,9 +1,7 @@
 "use strict";
-var __importDefault =
-  (this && this.__importDefault) ||
-  function(mod) {
-    return mod && mod.__esModule ? mod : { default: mod };
-  };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 // 入口文件处使用source-map
 const source_map_support_1 = __importDefault(require("source-map-support"));
@@ -18,18 +16,15 @@ const error_handle_1 = __importDefault(require("./middlewares/error-handle"));
 const router_1 = __importDefault(require("./router"));
 const app = express_1.default();
 // 全局捕获未处理的错误
-process.on("uncaughtException", function(err) {
-  process.exit(1);
+process.on("uncaughtException", function (err) {
+    process.exit(1);
 });
 // 设置模板引擎
 app.engine("html", require("ejs").__express);
 app.set("view engine", "html");
 app.set("views", path_1.default.join(__dirname, "www/views"));
 //设置静态资源目录
-app.use(
-  "/static",
-  express_1.default.static(path_1.default.join(__dirname, "www/public"))
-);
+app.use("/static", express_1.default.static(path_1.default.join(__dirname, "www/public")));
 // 解析cookie
 app.use(cookie_parser_1.default());
 // 压缩
