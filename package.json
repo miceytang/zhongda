@@ -1,0 +1,56 @@
+{
+  "name": "yuandaqh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-ts": "rm -rf ./dist && npm run copy-fs && tsc",
+    "watch-ts": "rm -rf ./dist && npm run copy-fs && tsc -w",
+    "copy-fs": "node copyStaticAssets.js",
+    "compress:node_modules": "gulp gzip:node_modules",
+    "compress:dist": "gulp zip:dist"
+  },
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "compression": "^1.7.3",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "module-alias": "^2.1.0",
+    "shelljs": "^0.8.3",
+    "source-map-support": "^0.5.9"
+  },
+  "devDependencies": {
+    "@types/compression": "0.0.36",
+    "@types/cookie-parser": "^1.4.1",
+    "@types/ejs": "^2.6.1",
+    "@types/express": "^4.16.0",
+    "@types/module-alias": "^2.0.0",
+    "@types/shelljs": "^0.8.1",
+    "@types/source-map-support": "^0.4.1",
+    "typescript": "^3.2.2"
+  },
+  "_moduleAliases": {
+    "@config": "dist/config",
+    "@constants": "dist/constants",
+    "@controllers": "dist/controllers",
+    "@core": "dist/core",
+    "@middlewares": "dist/middlewares",
+    "@router": "dist/router",
+    "@services": "dist/services",
+    "@util": "dist/util"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miceytang/yuandaqh.git"
+  },
+  "keywords": [
+    "远大期货"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miceytang/yuandaqh/issues"
+  },
+  "homepage": "https://github.com/miceytang/yuandaqh#readme"
+}

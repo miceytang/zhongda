@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "commonjs", // 输出成commonjs的格式
+    "esModuleInterop": true, // 支持使用export default
+    "target": "es6", // 代码中可使用ES6新特性
+    "noImplicitAny": true, //类型设置为any时不警告
+    "moduleResolution": "node", //指定模块的解析策略
+    "sourceMap": true, // 开启sourceMap
+    "outDir": "dist", // 输出目录
+    "experimentalDecorators": true,
+    // 以下两个配置便于寻找模块
+    "baseUrl": "./",
+    "paths": {
+      "*": ["node_modules/*", "server/typings/*"],
+      "@config/*": ["server/config/*"],
+      "@constants/*": ["server/constants/*"],
+      "@controllers/*": ["server/controllers/*"],
+      "@core/*": ["server/core/*"],
+      "@dao/*": ["server/dao/*"],
+      "@middlewares/*": ["server/middlewares/*"],
+      "@router/*": ["server/router"],
+      "@services/*": ["server/services/*"],
+      "@util/*": ["server/util/*"]
+    }
+  },
+  "files": ["server/typings/global-interface.d.ts"],
+  "include": ["server/**/*"], // 编译包含的文件夹：src目录下的所有子文件夹的所有类型
+  "exclude": ["server/www/**/*"]
+}
